@@ -24,8 +24,9 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        default: "#634C9F",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#634C9F",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -74,6 +75,9 @@ const config = {
       },
       width: {
         'calc-mobile-search': 'calc(100% - 32px)'
+      },
+      borderColor: {
+        "primary": "#D1D5DB"
       }
     },
   },
