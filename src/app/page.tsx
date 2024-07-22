@@ -12,6 +12,7 @@ import ImgMosaico07Desktop from "@/assets/home/mosaico-02/mosaico-02-home-img-04
 import ImgMosaico08Desktop from "@/assets/home/mosaico-03/mosaico-03-home-img-01-desktop.png";
 import ImgMosaico09Desktop from "@/assets/home/mosaico-03/mosaico-03-home-img-02-desktop.png";
 import { BannerSliderFull } from "@/components/BannerSliderFull";
+import { Shelf } from "@/components/Shelf";
 
 export default function Home() {
   const mosaico01 = [
@@ -118,7 +119,10 @@ export default function Home() {
       <BannerSliderFull />
       <Benefitbar />
       <ImagesMosaico dataImg={mosaico01} />
-      <div>Patreleira de Promoções da semana</div>
+      <div>
+        <p> Patreleira de Promoções da semana </p>
+        <Shelf />
+      </div>
       <ResponsiveMosaico dataImg={mosaico02} />
       <div>Moisaco de Produtos</div>
       <ImagesMosaico dataImg={mosaico03} />
