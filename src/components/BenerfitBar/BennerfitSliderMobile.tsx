@@ -40,11 +40,11 @@ export function BennefitSlider() {
         loop: true,
         align: "start",
       }}
-      className="my-9 pb-3 border-b border-gray-200 relative pl-4"
+      className="my-9 pb-3 pl-4 border-b border-gray-200 relative"
     >
       <CarouselContent>
-        <CarouselItem className="basis-3/5">
-          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto">
+        <CarouselItem className="basis-3/5 md:basis-2/5">
+          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto md:max-w-full">
             <Image src={IconSroes} alt="icon de loja" width={30} height={30} />
             <div>
               <p className="mb-1 font-bold tracking-[-0.32px]">
@@ -57,8 +57,8 @@ export function BennefitSlider() {
           </div>
         </CarouselItem>
 
-        <CarouselItem className="basis-3/5">
-          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto">
+        <CarouselItem className="basis-3/5 md:basis-2/5">
+          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto md:max-w-full">
             <Image
               src={IconQualidade}
               alt="icon de qualidade"
@@ -76,8 +76,8 @@ export function BennefitSlider() {
           </div>
         </CarouselItem>
 
-        <CarouselItem className="basis-3/5">
-          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto">
+        <CarouselItem className="basis-3/5 md:basis-2/5">
+          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto md:max-w-full">
             <Image
               src={IconFrete}
               alt="icon frete grátis"
@@ -94,8 +94,8 @@ export function BennefitSlider() {
           </div>
         </CarouselItem>
 
-        <CarouselItem className="basis-3/5">
-          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto">
+        <CarouselItem className="basis-3/5 md:basis-2/5">
+          <div className="flex justify-start items-center gap-5 w-full max-w-[200px] mx-auto md:max-w-full">
             <Image src={IconPix} alt="icon de pix" width={30} height={30} />
             <div>
               <p className="mb-1 font-bold tracking-[-0.32px]">Pagamento</p>

@@ -34,6 +34,7 @@ export function ResponsiveImage({
           width={widthDesktop}
           height={heightdesktop}
           alt={alt}
+          className="w-full"
         />
       ) : (
         <Image
@@ -41,6 +42,7 @@ export function ResponsiveImage({
           width={widthmobile}
           height={heightmobile}
           alt={alt}
+          className="w-full"
         />
       )}
     </>
