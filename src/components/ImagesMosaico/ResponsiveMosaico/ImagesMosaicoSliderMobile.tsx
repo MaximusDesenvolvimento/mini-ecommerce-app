@@ -42,7 +42,7 @@ export function ImageMosaicoSliderMobile({ dataImg }: PropsArrayImgMosaico) {
     >
       <CarouselContent>
         {dataImg.map((item, index) => (
-          <CarouselItem key={index} className="basis-3/5">
+          <CarouselItem key={index} className="basis-3/5 md:basis-2/5">
             <Link href={item.link}>
               <Image
                 src={item.srcMobile}

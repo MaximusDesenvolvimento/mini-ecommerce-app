@@ -74,11 +74,11 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       width: {
-        'calc-mobile-search': 'calc(100% - 32px)'
+        "calc-mobile-search": 'calc(100% - 32px)'
       },
       borderColor: {
         "primary": "#D1D5DB"
-      }
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

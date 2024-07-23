@@ -14,7 +14,7 @@ export function ImagesMosaico({ dataImg }: PropsArrayImgMosaico) {
   return (
     <div className="flex flex-col justify-center items-center gap-7 px-4 mb-9 md:justify-between md:flex-row">
       {dataImg.map((item, index) => (
-        <Link href={item.link} key={index}>
+        <Link href={item.link} key={index} className="w-full">
           <ResponsiveImage
             srcDesktop={item.srcDesktop}
             srcMobile={item.srcMobile}
