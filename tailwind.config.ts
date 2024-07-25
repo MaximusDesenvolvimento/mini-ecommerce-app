@@ -79,6 +79,9 @@ const config = {
       borderColor: {
         "primary": "#D1D5DB"
       },
+      maxWidth:{ 
+        "container": "1359px"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

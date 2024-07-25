@@ -46,7 +46,7 @@ export function ContainerProduct({
         className={`h-12 border border-[#634c9f] rounded-full cursor-pointer px-4 py-2 text-primary text-sm font-medium -tracking-[0.26px] absolute ${
           mosaico
             ? "w-[161px] left-[157px] min-[375px]:left-[186px] min-[400px]:left-[188px] bottom-4"
-            : "bottom-4 right-4 max-w-[128px] w-full min-[375px]:max-w-[145px] md:max-w-[195px]"
+            : "bottom-4 right-4 max-w-[128px] w-full min-[375px]:max-w-[145px] md:max-w-[195px] lg:max-w-[170px] lg:right-[19px]"
         } md:font-bold `}
       >
         Comprar
