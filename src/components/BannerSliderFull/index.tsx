@@ -38,31 +38,36 @@ export function BannerSliderFull() {
       opts={{
         loop: true,
       }}
-      className="relative"
+      className="relative mt-5 lg:h-96"
     >
-      <CarouselContent>
+      <CarouselContent className="lg:h-96">
         <CarouselItem>
           <Image
             src={fullBanner}
             alt="banner tela inteira"
             width={800}
             height={200}
+            className="w-full lg:h-[482px]"
           />
         </CarouselItem>
+
         <CarouselItem>
           <Image
             src={fullBanner}
             alt="banner tela inteira"
             width={800}
             height={200}
+            className="w-full lg:h-[482px]"
           />
         </CarouselItem>
+
         <CarouselItem>
           <Image
             src={fullBanner}
             alt="banner tela inteira"
             width={800}
             height={200}
+            className="w-full lg:h-[482px]"
           />
         </CarouselItem>
       </CarouselContent>
@@ -79,8 +84,8 @@ export function BannerSliderFull() {
           ))}
         </span>
       </div>
-      {/* <CarouselPrevious  />
-      <CarouselNext /> */}
+      <CarouselPrevious className="hidden lg:flex lg:left-24" />
+      <CarouselNext className="hidden lg:flex lg:right-24" />
     </Carousel>
   );
 }

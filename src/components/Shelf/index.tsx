@@ -6,6 +6,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { type CarouselApi } from "@/components/ui/carousel";
 import { ContainerProduct } from "../ContainerProduct";
@@ -38,7 +40,7 @@ export function Shelf({ title, goFor, query }: PropsShelf) {
   }, [api]);
 
   return (
-    <div className="my-8">
+    <div className="my-8 lg:max-w-container lg:mx-auto">
       <div className="w-full flex justify-between items-center mb-5 px-4">
         <p className="text-lg text-gray-950 font-bold -tracking-[0.36px]">
           {title}
@@ -67,7 +69,10 @@ export function Shelf({ title, goFor, query }: PropsShelf) {
       >
         <CarouselContent>
           {products.map((item, index) => (
-            <CarouselItem key={index} className="basis-1/2 md:basis-2/5">
+            <CarouselItem
+              key={index}
+              className="basis-1/2 md:basis-2/5 lg:basis-1/6"
+            >
               <ContainerProduct product={item} />
             </CarouselItem>
           ))}
@@ -85,6 +90,8 @@ export function Shelf({ title, goFor, query }: PropsShelf) {
             ))}
           </span>
         </div>
+        <CarouselPrevious className="hidden lg:flex lg:left-4 lg:top-40" />
+        <CarouselNext className="hidden lg:flex lg:right-4 lg:top-40" />
       </Carousel>
     </div>
   );

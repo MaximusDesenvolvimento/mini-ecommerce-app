@@ -8,7 +8,7 @@ import { Basket, Heart, User } from "@phosphor-icons/react";
 
 export function DesktopHeader() {
   return (
-    <div className="flex justify-between items-center py-5 max-w-7xl m-auto px-4 gap-4 xl:gap-0">
+    <div className="flex justify-between items-center py-5 max-w-container m-auto px-4 gap-4 xl:gap-0">
       <Link href="/">
         <Image
           src={IconLogo}

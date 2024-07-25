@@ -7,8 +7,8 @@ import IconPix from "@/assets/home/benefitBar/icon-pix.svg";
 
 export function BennefitbarDesktop() {
   return (
-    <div className="flex justify-center items-center flex-wrap gap-5 my-9 pb-10 border-b border-gray-200">
-      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto">
+    <div className="flex justify-center items-center flex-wrap gap-5 my-9 pb-10 border-b border-gray-200 lg:max-w-container lg:mx-auto lg:justify-between lg:px-4">
+      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto lg:mx-0 lg:max-w-[20%]">
         <Image src={IconSroes} alt="icon de loja" width={30} height={30} />
         <div>
           <p className="mb-1 font-bold tracking-[-0.32px]">Compre no site</p>
@@ -18,7 +18,7 @@ export function BennefitbarDesktop() {
         </div>
       </div>
 
-      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto">
+      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto lg:mx-0 lg:max-w-[20%]">
         <Image
           src={IconQualidade}
           alt="icon de qualidade"
@@ -35,7 +35,7 @@ export function BennefitbarDesktop() {
         </div>
       </div>
 
-      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto">
+      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto lg:mx-0 lg:max-w-[20%]">
         <Image
           src={IconFrete}
           alt="icon frete grátis"
@@ -49,7 +49,7 @@ export function BennefitbarDesktop() {
         </div>
       </div>
 
-      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto">
+      <div className="flex justify-start items-center gap-5 w-full max-w-[221px] mx-auto lg:mx-0 lg:max-w-[20%]">
         <Image src={IconPix} alt="icon de pix" width={30} height={30} />
         <div>
           <p className="mb-1 font-bold tracking-[-0.32px]">Pagamento</p>
