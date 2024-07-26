@@ -1,47 +1,6 @@
-// import Link from "next/link";
-// import { IconMenu } from "../Mobile/Icons/IconMenu";
-
-// export function DesktopMenu() {
-//   return (
-//     <nav className="max-w-container mx-auto px-4">
-//       <ul className="flex items-center gap-6">
-//         <li className="font-semibold hover:underline flex items-center gap-3">
-//           <IconMenu />
-//           <Link href="#">Todas as categorias</Link>
-//         </li>
-
-//         <li className="font-semibold hover:underline">
-//           <Link href="#">caterogia 1</Link>
-//         </li>
-
-//         <li className="font-semibold hover:underline">
-//           <Link href="#">caterogia 2</Link>
-//         </li>
-
-//         <li className="font-semibold hover:underline">
-//           <Link href="#">caterogia 3</Link>
-//         </li>
-
-//         <li className="font-semibold hover:underline">
-//           <Link href="#">caterogia 4</Link>
-//         </li>
-
-//         <li className="font-semibold hover:underline">
-//           <Link href="#">caterogia 5</Link>
-//         </li>
-
-//         <li className="font-semibold hover:underline">
-//           <Link href="#">caterogia 6</Link>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import {
@@ -51,7 +10,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const components: { href: string; description: string }[] = [
