@@ -9,9 +9,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { IconMenu } from "./IconMenu";
+import { IconMenu } from "./Icons/IconMenu";
 import Link from "next/link";
-import { IconArrow } from "./IconArrow";
+import { IconArrow } from "./Icons/IconArrow";
+import { IconUser } from "./Icons/IconUser";
 
 export function MobileMenu() {
   return (
@@ -28,44 +29,45 @@ export function MobileMenu() {
         </SheetHeader>
 
         <ul className="my-5 space-y-6 font-semibold">
-          <li className="underline">
+          <li className="underline text-black flex gap-2 items-center">
+            <IconUser />
             <Link href="/login-register">Faça login ou cadastra-se</Link>
           </li>
 
-          <li className="underline">
+          <li className="underline text-black">
             <Link href="/account">Minha conta</Link>
           </li>
 
-          <li className="underline">
+          <li className="underline text-black">
             <Link href="/account/orders">Meus pedidos</Link>
           </li>
 
-          <li className="border-gray-300 border-b pb-3 flex items-center justify-between">
+          <li className="border-gray-300 border-b pb-3 flex items-center justify-between text-black">
             <Link href="#">Departamento 1</Link>
             <IconArrow />
           </li>
 
-          <li className="border-gray-300 border-b pb-3 flex items-center justify-between">
+          <li className="border-gray-300 border-b pb-3 flex items-center justify-between text-black">
             <Link href="#">Departamento 2</Link>
             <IconArrow />
           </li>
 
-          <li className="border-gray-300 border-b pb-3 flex items-center justify-between">
+          <li className="border-gray-300 border-b pb-3 flex items-center justify-between text-black">
             <Link href="#">Departamento 3</Link>
             <IconArrow />
           </li>
 
-          <li className="border-gray-300 border-b pb-3 flex items-center justify-between">
+          <li className="border-gray-300 border-b pb-3 flex items-center justify-between text-black">
             <Link href="#">Departamento 4</Link>
             <IconArrow />
           </li>
 
-          <li className="border-gray-300 border-b pb-3 flex items-center justify-between">
+          <li className="border-gray-300 border-b pb-3 flex items-center justify-between text-black">
             <Link href="#">Departamento 5</Link>
             <IconArrow />
           </li>
 
-          <li className="border-gray-300 border-b pb-3 flex items-center justify-between">
+          <li className="border-gray-300 border-b pb-3 flex items-center justify-between text-black">
             <Link href="#">Departamento 6</Link>
             <IconArrow />
           </li>

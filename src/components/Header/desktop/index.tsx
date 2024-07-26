@@ -5,27 +5,32 @@ import Link from "next/link";
 import IconLogo from "@/assets/logo.svg";
 import { InputSearch } from "../InputSearch/InputSearch";
 import { Basket, Heart, User } from "@phosphor-icons/react";
+import { DesktopMenu } from "@/components/Menu/Desktop";
 
 export function DesktopHeader() {
   return (
-    <div className="flex justify-between items-center py-5 max-w-container m-auto px-4 gap-4 xl:gap-0">
-      <Link href="/">
-        <Image
-          src={IconLogo}
-          width={142}
-          height={48}
-          alt="Logo"
-          className="min-w-36"
-        />
-      </Link>
+    <div>
+      <div className="flex justify-between items-center py-5 max-w-container m-auto px-4 gap-4 xl:gap-0">
+        <Link href="/">
+          <Image
+            src={IconLogo}
+            width={142}
+            height={48}
+            alt="Logo"
+            className="min-w-36"
+          />
+        </Link>
 
-      <InputSearch />
+        <InputSearch />
 
-      <div className="flex justify-center items-center gap-5">
-        <User size={25} />
-        <Heart size={25} />
-        <Basket size={25} />
+        <div className="flex justify-center items-center gap-5">
+          <User size={25} />
+          <Heart size={25} />
+          <Basket size={25} />
+        </div>
       </div>
+
+      <DesktopMenu />
     </div>
   );
 }
