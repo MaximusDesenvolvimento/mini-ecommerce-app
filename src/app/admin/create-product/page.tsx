@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { InputMask } from "@/components/MaskedInput";
 
 export default function CreateProduct() {
   const { toast } = useToast();
@@ -64,8 +65,6 @@ export default function CreateProduct() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      console.log(values);
-
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_URL_API}/product`,
         {
@@ -202,7 +201,8 @@ export default function CreateProduct() {
               <FormItem className="w-full">
                 <FormLabel>Preço antigo *</FormLabel>
                 <FormControl>
-                  <Input
+                  <InputMask
+                    maskType="money"
                     placeholder="Ex: R$ 12,00"
                     className="h-12 rounded-lg border-primary md:h-10"
                     {...field}
@@ -220,7 +220,8 @@ export default function CreateProduct() {
               <FormItem className="w-full">
                 <FormLabel>Preço *</FormLabel>
                 <FormControl>
-                  <Input
+                  <InputMask
+                    maskType="money"
                     placeholder="Ex: R$ 10,00"
                     className="h-12 rounded-lg border-primary md:h-10"
                     {...field}

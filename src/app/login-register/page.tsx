@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ContainerLogin } from "@/container/Login";
+import { ContainerRegister } from "@/container/Register";
 
 export default function LoginRegister() {
   return (
@@ -13,7 +14,7 @@ export default function LoginRegister() {
       </TabsContent>
 
       <TabsContent value="register">
-        <h2>Cadastro</h2>
+        <ContainerRegister />
       </TabsContent>
     </Tabs>
   );
