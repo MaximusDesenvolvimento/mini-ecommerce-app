@@ -35,9 +35,14 @@ export function ContainerRegister() {
         message:
           "A senha deve conter pelo menos um letra maiúscula e um caractere especial.",
       }),
-    name: z.string().min(3, {
-      message: "Seu nome precisa ter pelo menos três letras",
-    }),
+    name: z
+      .string()
+      .min(3, {
+        message: "Seu nome precisa ter pelo menos três letras",
+      })
+      .regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+        message: "O produto pode ter apenas letras, números e hifens.",
+      }),
     phoneNumber: z.string().regex(/^\(?\d{2}\)?\s?\d{5}-\d{4}$/, {
       message:
         "Número de celular inválido. Verifique se ele está no padrão: (99) 99999-9999 or 99999-9999",
@@ -53,13 +58,25 @@ export function ContainerRegister() {
       .regex(/^\d{5}-\d{3}$/, {
         message: "CEP inválido, verifique se ele está neste padrão: 00000-000",
       }),
-    street: z.string(),
-    district: z.string(),
-    city: z.string(),
-    states: z.string(),
+    street: z.string().regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+      message: "O produto pode ter apenas letras, números e hifens.",
+    }),
+    district: z.string().regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+      message: "O produto pode ter apenas letras, números e hifens.",
+    }),
+    city: z.string().regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+      message: "O produto pode ter apenas letras, números e hifens.",
+    }),
+    state: z.string().regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+      message: "O produto pode ter apenas letras, números e hifens.",
+    }),
     number: z.string(),
-    complement: z.string(),
-    referencePoint: z.string(),
+    complement: z.string().regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+      message: "O produto pode ter apenas letras, números e hifens.",
+    }),
+    referencePoint: z.string().regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
+      message: "O produto pode ter apenas letras, números e hifens.",
+    }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -185,14 +202,44 @@ export function ContainerRegister() {
             )}
           />
 
+          <div className="flex items-center gap-4">
+            <FormField
+              control={form.control}
+              name="city"
+              render={({ field }) => (
+                <FormItem className="mb-4 w-1/2">
+                  <FormLabel>Cidade*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ex: João Pessoa" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="state"
+              render={({ field }) => (
+                <FormItem className="mb-4 w-1/2">
+                  <FormLabel>Estado*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ex: Paraíba" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
           <FormField
             control={form.control}
-            name="states"
+            name="street"
             render={({ field }) => (
               <FormItem className="mb-4">
-                <FormLabel>Nome da Rua*</FormLabel>
+                <FormLabel>Rua*</FormLabel>
                 <FormControl>
-                  <Input placeholder="Rua. exemplo" {...field} />
+                  <Input placeholder="Ex: Pernambuco" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -206,68 +253,41 @@ export function ContainerRegister() {
               <FormItem className="mb-4">
                 <FormLabel>Bairro*</FormLabel>
                 <FormControl>
-                  <Input placeholder="Bairro exemplo" {...field} />
+                  <Input placeholder="Ex: Bairro dos Estados" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="city"
-            render={({ field }) => (
-              <FormItem className="mb-4">
-                <FormLabel>Cidade*</FormLabel>
-                <FormControl>
-                  <Input placeholder="João Pessoa" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="number"
-            render={({ field }) => (
-              <FormItem className="mb-4">
-                <FormLabel>Número*</FormLabel>
-                <FormControl>
-                  <Input placeholder="Ex: 121" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="states"
-            render={({ field }) => (
-              <FormItem className="mb-4">
-                <FormLabel>Estado*</FormLabel>
-                <FormControl>
-                  <Input placeholder="Ex: Paraíba" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="complement"
-            render={({ field }) => (
-              <FormItem className="mb-4">
-                <FormLabel>Complemento*</FormLabel>
-                <FormControl>
-                  <Input placeholder="Ex: apto 301" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="flex items-center gap-4">
+            <FormField
+              control={form.control}
+              name="number"
+              render={({ field }) => (
+                <FormItem className="mb-4 w-1/2">
+                  <FormLabel>Número*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ex: 121" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="complement"
+              render={({ field }) => (
+                <FormItem className="mb-4 w-1/2">
+                  <FormLabel>Complemento*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ex: apto 301" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
           <FormField
             control={form.control}
