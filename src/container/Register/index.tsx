@@ -18,6 +18,16 @@ import { Button } from "@/components/ui/button";
 import { InputMask } from "@/components/MaskedInput";
 import { useToast } from "@/components/ui/use-toast";
 
+interface CepProps {
+  status: number;
+  data: {
+    bairro: string;
+    localidade: string;
+    logradouro: string;
+    uf: string;
+  };
+}
+
 export function ContainerRegister() {
   const { toast } = useToast();
   const pattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).*$/;
@@ -82,6 +92,32 @@ export function ContainerRegister() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
+
+  async function getCEp(cep: string) {
+    if (cep.length === 9) {
+      const sendCep = await fetch(`api/cep?cep=${cep.replace("-", "")}`, {
+        cache: "no-cache",
+      });
+
+      const response: CepProps = await sendCep.json();
+      console.log(response);
+
+      if (response.status === 404) {
+        form.setError("zipCode", { message: "Cep inválido!" });
+        form.setValue("city", "");
+        form.setValue("state", "");
+        form.setValue("street", "");
+        form.setValue("district", "");
+      } else {
+        const { bairro, localidade, logradouro, uf } = response.data;
+        form.clearErrors("zipCode");
+        form.setValue("city", localidade);
+        form.setValue("state", uf);
+        form.setValue("street", logradouro);
+        form.setValue("district", bairro);
+      }
+    }
+  }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -195,6 +231,10 @@ export function ContainerRegister() {
                     maskType="cep"
                     placeholder="Digite sua senha"
                     {...field}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      getCEp(e.target.value)
+                    }
+                    onBlur={field.onBlur}
                   />
                 </FormControl>
                 <FormMessage />

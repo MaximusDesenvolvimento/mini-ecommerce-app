@@ -24,7 +24,9 @@ export function DesktopHeader() {
         <InputSearch />
 
         <div className="flex justify-center items-center gap-5">
-          <User size={25} />
+          <Link href="/login-register">
+            <User size={25} />
+          </Link>
           <Heart size={25} />
           <Basket size={25} />
         </div>
