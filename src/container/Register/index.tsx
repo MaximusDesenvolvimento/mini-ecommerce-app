@@ -59,10 +59,10 @@ export function ContainerRegister() {
     }),
     zipCode: z
       .string()
-      .min(8, {
+      .min(9, {
         message: "O CEP contém no minímo 8 digitos",
       })
-      .max(8, {
+      .max(9, {
         message: "O CEP contém no máximo 8 digitos",
       })
       .regex(/^\d{5}-\d{3}$/, {
@@ -100,8 +100,6 @@ export function ContainerRegister() {
       });
 
       const response: CepProps = await sendCep.json();
-      console.log(response);
-
       if (response.status === 404) {
         form.setError("zipCode", { message: "Cep inválido!" });
         form.setValue("city", "");
@@ -111,6 +109,7 @@ export function ContainerRegister() {
       } else {
         const { bairro, localidade, logradouro, uf } = response.data;
         form.clearErrors("zipCode");
+        form.setValue("zipCode", cep);
         form.setValue("city", localidade);
         form.setValue("state", uf);
         form.setValue("street", logradouro);
@@ -120,7 +119,7 @@ export function ContainerRegister() {
   }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    console.log("valores: ", values);
     try {
       // const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/login`, {
       //   method: "POST",
