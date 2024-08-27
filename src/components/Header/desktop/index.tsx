@@ -5,7 +5,7 @@ import Link from "next/link";
 import IconLogo from "@/assets/logo.svg";
 import { InputSearch } from "../InputSearch/InputSearch";
 import { Basket, Heart, User } from "@phosphor-icons/react";
-import { DesktopMenu } from "@/components/Menu/Desktop";
+import { DesktopMenu } from "./Menu";
 
 export function DesktopHeader() {
   return (

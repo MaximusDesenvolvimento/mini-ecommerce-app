@@ -1,18 +1,15 @@
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { IconMenu } from "./Icons/IconMenu";
+import { IconMenu } from "../../mobile/Menu/Icons/IconMenu";
 import Link from "next/link";
-import { IconArrow } from "./Icons/IconArrow";
-import { IconUser } from "./Icons/IconUser";
+import { IconArrow } from "../../mobile/Menu/Icons/IconArrow";
+import { IconUser } from "../../mobile/Menu/Icons/IconUser";
 
 export function MobileMenu() {
   return (

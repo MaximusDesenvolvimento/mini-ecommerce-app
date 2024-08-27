@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import IconLogo from "@/assets/logo.svg";
-import { MobileMenu } from "@/components/Menu/Mobile";
-import { IconUser } from "@/components/Menu/Mobile/Icons/IconUser";
+
+import { IconUser } from "@/components/Header/mobile/Menu/Icons/IconUser";
 
 import { InputSearch } from "../InputSearch/InputSearch";
+import { MobileMenu } from "./Menu";
 
 export function MobileHeader() {
   return (
