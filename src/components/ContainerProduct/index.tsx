@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { formatPrices } from "@/utils/formatPrice";
+import { BuyButton } from "../BuyButton";
 
 interface PropsProduct {
   product: {
@@ -31,6 +32,15 @@ export function ContainerProduct({
       return Math.floor(calc * 100) / 100;
     }
   }
+  const product = {
+    id: "1",
+    urlImage,
+    name,
+    oldPrice,
+    price,
+    category,
+    quantity: 0,
+  };
 
   const isMosaico = mosaico
     ? "flex flex-row items-center w-full"
@@ -42,7 +52,8 @@ export function ContainerProduct({
         mosaico ? "w-full mx-auto" : "max-w-[175px] md:max-w-[227px]"
       }`}
     >
-      <button
+      <BuyButton
+        productData={product}
         className={`h-12 border border-[#634c9f] rounded-full cursor-pointer px-4 py-2 text-primary text-sm font-medium -tracking-[0.26px] absolute ${
           mosaico
             ? "w-[161px] left-[157px] min-[375px]:left-[186px] min-[400px]:left-[188px] bottom-4"
@@ -50,7 +61,7 @@ export function ContainerProduct({
         } md:font-bold `}
       >
         Comprar
-      </button>
+      </BuyButton>
       <Link
         href={"#"}
         className={`p-4 gap-3 border border-gray-200 rounded-lg ${isMosaico} ${
