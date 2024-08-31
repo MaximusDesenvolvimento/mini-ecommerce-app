@@ -6,6 +6,7 @@ import IconLogo from "@/assets/logo.svg";
 import { InputSearch } from "../InputSearch/InputSearch";
 import { Basket, Heart, User } from "@phosphor-icons/react";
 import { DesktopMenu } from "./Menu";
+import { Minicart } from "../Minicart";
 
 export function DesktopHeader() {
   return (
@@ -28,7 +29,7 @@ export function DesktopHeader() {
             <User size={25} />
           </Link>
           <Heart size={25} />
-          <Basket size={25} />
+          <Minicart />
         </div>
       </div>
 

@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import IconLogo from "@/assets/logo.svg";
-
-import { IconUser } from "@/components/Header/mobile/Menu/Icons/IconUser";
-
 import { InputSearch } from "../InputSearch/InputSearch";
 import { MobileMenu } from "./Menu";
+
+import IconLogo from "@/assets/logo.svg";
+import { Minicart } from "../Minicart";
 
 export function MobileHeader() {
   return (
@@ -18,7 +17,7 @@ export function MobileHeader() {
           <Image src={IconLogo} alt="icon logo" width={142} height={34} />
         </Link>
 
-        <IconUser />
+        <Minicart />
       </div>
 
       <InputSearch />
