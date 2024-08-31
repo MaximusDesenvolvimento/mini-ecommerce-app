@@ -53,6 +53,15 @@ export function ContainerRegister() {
       .regex(/^([a-zA-ZÀ-ÿ0-9\s\-]+)$/i, {
         message: "O produto pode ter apenas letras, números e hifens.",
       }),
+    age: z
+      .string()
+      .regex(/^(?:1[01][0-9]|120|[1-9]?[0-9])$/, {
+        message: "Idade inválida. Deve ser um número entre 0 e 120.",
+      })
+      .refine((value) => parseInt(value) >= 18, {
+        message: "Você deve ser maior de 18 anos",
+      }),
+    gender: z.string(),
     phoneNumber: z.string().regex(/^\(?\d{2}\)?\s?\d{5}-\d{4}$/, {
       message:
         "Número de celular inválido. Verifique se ele está no padrão: (99) 99999-9999 or 99999-9999",
@@ -119,20 +128,39 @@ export function ContainerRegister() {
   }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("valores: ", values);
+    const requestData = {
+      name: values.name,
+      age: values.age,
+      gender: values.gender,
+      phoneNumber: values.phoneNumber,
+      email: values.email,
+      password: values.password,
+      address: {
+        zipCode: values.zipCode,
+        street: values.street,
+        district: values.district,
+        city: values.city,
+        number: values.number,
+        state: values.state,
+        complement: values.complement,
+        referencePoint: values.referencePoint,
+      },
+    };
+    console.log("Enviar para a API: ", requestData);
     try {
       // const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/login`, {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json",
       //   },
-      //   body: JSON.stringify(values),
+      //   body: JSON.stringify(requestData),
       // });
       // const data = await response.json();
       // console.log("response: ", data);
       toast({
-        title: "Login bem sucedido!",
-        description: "Você está sendo redirecionado.",
+        title: `É bom te ver por aqui ${requestData.name}!`,
+        description:
+          "Estamos realizando seu cadastro em instantes você será redirecionado.",
       });
     } catch (error) {
       toast({
@@ -164,6 +192,36 @@ export function ContainerRegister() {
               </FormItem>
             )}
           />
+
+          <div className="flex items-center gap-4">
+            <FormField
+              control={form.control}
+              name="age"
+              render={({ field }) => (
+                <FormItem className="mb-4 w-1/2">
+                  <FormLabel>Idade*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ex: 18" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="gender"
+              render={({ field }) => (
+                <FormItem className="mb-4 w-1/2">
+                  <FormLabel>Genero*</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Ex: Feminino" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
           <FormField
             control={form.control}
