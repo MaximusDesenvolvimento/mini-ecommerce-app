@@ -38,9 +38,9 @@ export function BannerSliderFull() {
       opts={{
         loop: true,
       }}
-      className="relative mt-5 lg:h-96"
+      className="relative mt-5 lg:h-full"
     >
-      <CarouselContent className="lg:h-96">
+      <CarouselContent className="lg:h-full">
         <CarouselItem>
           <Image
             src={fullBanner}

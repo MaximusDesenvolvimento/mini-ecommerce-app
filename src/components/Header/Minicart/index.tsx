@@ -1,12 +1,9 @@
-import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "@/components/ui/sheet";
-import { IconMinicart } from "./Components/Icons/IconMinicart";
 import { MinicartFooter } from "./Components/Footer";
 import { ContentMinicart } from "./Components/ContentMinicart";
 import { HeaderMinicart } from "./Components/Header";
